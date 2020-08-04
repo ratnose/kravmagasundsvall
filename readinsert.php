@@ -5,9 +5,11 @@
     foreach ($lines as $line_num => $line) {
         array_push($listarray, $line);
     }
-    print_r($listarray);
 
-    $connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms') or die("Failed to connect to MySQL: " . mysqli_error()); 
+    $connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms') or die("Failed to connect: " . mysqli_error());
+    $query = "INSERT INTO news (date, headline, description) VALUES ('".$listarray[0]."', '".$listarray[1]."', '".$listarray[2]."')";
 
-    $query = "INSERT INTO user_review (date, headline, description) VALUES ('$listarray[0]', '$listarray[1]', '$listarray[2]')";    
+    if (!mysqli_query($connect, $query)) {
+        die('An error occurred when submitting. '.mysqli_error());
+    }
 ?>
