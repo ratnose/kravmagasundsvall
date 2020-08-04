@@ -1,22 +1,15 @@
 from datetime import date
-#import mariadb
-#import sys
+import sys
+import pymysql.cursors
 
-#try:
-#    conn = mariadb.connect(
-#        user="db_user",
-#        password="db_user_passwd",
-#        host="192.0.2.1",
-#        port=3306,
-#        database="employees"
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='kravmaga',
+                             password='dont-punch-your-friends',
+                             db='kms',
+                             charset='utf8',
+                             cursorclass=pymysql.cursors.DictCursor)
 
-#    )
-#except mariadb.Error as e:
-#    print(f"Error connecting to MariaDB Platform: {e}")
-#    sys.exit(1)
-
-# Get Cursor
-#cur = conn.cursor()
 
 today = date.today()
 
