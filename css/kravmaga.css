@@ -1,0 +1,22 @@
+html,body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+@media screen and (min-width: 20em) {
+    
+    #maincontent {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    body {
+        background-color: blueviolet;
+    }
+}
+}
