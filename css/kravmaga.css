@@ -4,13 +4,60 @@ html,body {
     background-color: black;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.training {
+    max-width: 100%;
+    max-height: 3fr;
+    display: block;
+    border: 5px solid green;
+    padding: 2em;
+    color: green;
+    text-align: center;
+}
+
+#toplogo {
+    grid-area: toplogo;
+}
+
+#nexttraining {
+    grid-area: nexttraining;
+}
+
+#maininfo {
+    grid-area: maininfo;
+}
+
+#imageshifter {
+    grid-area: imageshifter;
+}
+
+#contact {
+    grid-area: contact;
+}
+
+#endlogo {
+    grid-area: endloga;
+}
+
 @media screen and (min-width: 20em) {
     
     #maincontent {
-        height: 100vh;
         display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 1;
+        grid-template-columns: 100vw 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            "toplogo"
+            "nexttraining"
+            "maininfo"
+            "imageshifter"
+            "contact"
+            "endlogo";
+        gap: 0.6em;
     }
 }
 
@@ -19,4 +66,4 @@ html,body {
         background-color: blueviolet;
     }
 }
-}
+
