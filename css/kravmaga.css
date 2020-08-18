@@ -16,8 +16,15 @@ img {
     display: block;
     border: 5px solid green;
     padding: 2em;
+    margin: 1em;
     color: green;
     text-align: center;
+}
+
+.info {
+    place-self: center;
+    padding: 1em;
+    color:lightgray;
 }
 
 #toplogo {
