@@ -20,12 +20,12 @@ foreach ($directory as $fileinfo) {
         // check if extension match
         if (in_array($extension, $extensions)) {
             // add to result
-            echo $fileinfo->getFilename();
             $query = "INSERT INTO images (imageName) VALUES ('".$fileinfo->getFilename()."'";
+            echo $query;
             //$result[] = $fileinfo->getFilename();
         }
     }
 }
 // print result
-print_r($result);
+//print_r($result);
 ?>
