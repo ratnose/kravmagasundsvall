@@ -17,7 +17,7 @@
             $extension = strtolower(pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION));
             if (in_array($extension, $extensions)) {
                 $query = "INSERT INTO images (imageName, dateAdded) VALUES ('".$fileinfo->getFilename()."','".$todaydate."' ";
-                echo $connect;
+
                 if (!mysqli_query($connect, $query)) {
                     die('An error occurred when submitting. '.mysqli_error());
                 }
