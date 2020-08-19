@@ -1,6 +1,13 @@
 <?php
     $todaydate = date("Y-m-d");
-    $connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms') or die("Failed to connect: " . mysqli_error());
+    //$connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms') or die("Failed to connect: " . mysqli_error());
+
+    $connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms');
+    if (!$connect)
+    {
+        error_reporting(0);
+        die("Error: Unable to connect to MySQL." . PHP_EOL);
+    }
 
     $extensions = array('jpg', 'jpeg', 'png');
     $directory = new DirectoryIterator('img/snurr/');
