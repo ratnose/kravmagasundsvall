@@ -1,4 +1,5 @@
 <?php
+$todaydate = date("Y-m-d");
 // image extensions
 $extensions = array('jpg', 'jpeg', 'png');
 
@@ -19,9 +20,9 @@ foreach ($directory as $fileinfo) {
         $extension = strtolower(pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION));
         // check if extension match
         if (in_array($extension, $extensions)) {
-            // add to result
-            $query = "INSERT INTO images (imageName) VALUES ('".$fileinfo->getFilename()."'";
-            echo $query;
+            // add to result ('".$listarray[0]."', '".$listarray[1]."', '".$listarray[2]."')";
+            $query = "INSERT INTO images (imageName, dateAdded) VALUES ('".$fileinfo->getFilename()."','".$todaydate."' ";
+            echo $query."<br>";
             //$result[] = $fileinfo->getFilename();
         }
     }
