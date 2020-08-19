@@ -1,15 +1,26 @@
 <?php
-    $todaydate = date("Y-m-d");
-    $lines = file("img/snurr/");
-    $listarray = [];
-    foreach ($lines as $line_num => $line) {
-        array_push($listarray, $line);
-    }
+// image extensions
+$extensions = array('jpg', 'jpeg', 'png', 'JPG', 'JPEG','PNG');
 
-    $connect = mysqli_connect('127.0.0.1', 'kravmaga', 'dont-punch-your-friends', 'kms') or die("Failed to connect: " . mysqli_error());
-    $query = "INSERT INTO news (date, headline, description) VALUES ('".$listarray[0]."', '".$listarray[1]."', '".$listarray[2]."')";
+// init result
+$result = array();
 
-    if (!mysqli_query($connect, $query)) {
-        die('An error occurred when submitting. '.mysqli_error());
+// directory to scan
+$directory = new DirectoryIterator('img/snurr/');
+
+// iterate
+foreach ($directory as $fileinfo) {
+    // must be a file
+    if ($fileinfo->isFile()) {
+        // file extension
+        $extension = strtolower(pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION));
+        // check if extension match
+        if (in_array($extension, $extensions)) {
+            // add to result
+            $result[] = $fileinfo->getFilename();
+        }
     }
+}
+// print result
+print_r($result);
 ?>
