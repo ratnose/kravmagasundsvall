@@ -16,8 +16,8 @@
         if ($fileinfo->isFile()) {
             $extension = strtolower(pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION));
             if (in_array($extension, $extensions)) {
-                $query = "INSERT INTO images (imageName, dateAdded) VALUES ('".$fileinfo->getFilename()."','".$todaydate."' ";
-                mysqli_query($connect, $query)
+                $query = "INSERT INTO images (imageName, dateAdded) VALUES ('".$fileinfo->getFilename()."','".$todaydate."')";
+                mysqli_query($connect, $query);
             }
         }
     }
