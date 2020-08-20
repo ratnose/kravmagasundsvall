@@ -1,12 +1,24 @@
 @import url("https://use.typekit.net/pdd0gnf.css");
 
- //Almaq Refined, Almaq Rough, Astoria Sans, Astora Sans condesed, Pitch, Lomrimer No 2, Parppim
- //Lomrimer No 2 Condenced, Lomrimer No 2 Stencil
-
 html,body {
     padding: 0;
     margin: 0;
     background-color: black;
+}
+
+.text {
+    font-family: astoria-sans, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    size: 2rem;
+    line-height: 1.3rem;
+}
+
+.headline {
+    font-family: almaq-refined, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    size: 10rem;
 }
 
 img {
@@ -59,11 +71,6 @@ img {
 @media screen and (min-width: 20em) {
     
     #maincontent {
-<<<<<<< HEAD
-        max-width: 100vw;
-        height: 100vh;
-=======
->>>>>>> master
         display: grid;
         grid-template-columns: 100vw 1fr;
         grid-template-rows: auto 1fr;
@@ -82,9 +89,5 @@ img {
     body {
         background-color: blueviolet;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
->>>>>>> master
